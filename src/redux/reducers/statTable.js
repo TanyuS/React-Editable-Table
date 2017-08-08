@@ -1,22 +1,23 @@
 /**
  * Created by Soul on 02.08.2017.
  */
-import {CONTACTS_SUCCESS, CONTACT_UPDATE} from '../actions/stat-table';
+import {STAT_SUCCESS, STAT_UPDATE} from '../actions/statTable';
 
 export default (state, action) => {
 	if (!state) {
 		// initial state
 		return {
-			list: []
+			list: [],
+			isLoading: false
 		};
 	}
 
 	switch (action.type) {
-		case CONTACTS_SUCCESS:
+		case STAT_SUCCESS:
 			return Object.assign({}, state, {
 				list: action.body.list
 			});
-		case CONTACT_UPDATE:
+		case STAT_UPDATE:
 			// имеем action.id
 			// имеем action.data
 			// найти state.list объек с нужным id и заменить поля из data

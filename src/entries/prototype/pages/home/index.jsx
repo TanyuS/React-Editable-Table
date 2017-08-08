@@ -1,11 +1,11 @@
 import './home.less';
 
 import React from 'react';
-import StatsTable from '../../../../components/table/table';
+import StatsTable from '../../../../components/table/table-container';
 
 export default () => (
 	<div>
 		Home page
-		<StatsTable/>
+		<StatsTable foo="bar"/>
 	</div>
 );

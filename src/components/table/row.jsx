@@ -1,32 +1,10 @@
-import React, {PureComponent} from 'react';
+import React from 'react';
 
-import block from 'bem-cn-lite';
+import RowEditable from './row-editable';
+import RowReadonly from './row-readonly';
 
-const b = block('stats-table');
+const Row = props => (
+	props.isChanging ? <RowEditable {...props}/> : <RowReadonly {...props}/>
+);
 
-class TableRow extends PureComponent {
-    render() {
-        const {id, date, networkName, requests, clicks, impressions, isChanging, updateState} = this.props;
-
-        return (
-            <tr className={b("row")}>
-                <td className={b("ele")}>
-                    {date}
-                </td>
-                <td className={b("ele")}>
-                    {networkName}
-                </td>
-                <td className={b("ele")}>
-                    {requests}
-                </td>
-                <td className={b("ele")}>
-                    {clicks}
-                </td>
-                <td className={b("ele")}>
-                    {impressions}
-                </td>
-            </tr>
-        );
-    }
-}
-export default TableRow;
+export default Row;

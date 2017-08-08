@@ -51,7 +51,7 @@ export default store => next => action => {
 	}
 
 	const [successType, progressType, failedType] = types;
-	const token = store.getState().auth.token;
+	const token = 'FooBar'; // store.getState().auth.token;
 
 	if (progressType) {
 		next(Object.assign({}, extras, {type: progressType}));
